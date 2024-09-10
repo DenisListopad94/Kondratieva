@@ -1,0 +1,6 @@
+<h1>Все задачи</h1>
+<ul>
+    {% for task in tasks %}
+        <li>{{ task.title }} - {{ task.status }} - {{ task.priority }}</li>
+    {% endfor %}
+</ul>

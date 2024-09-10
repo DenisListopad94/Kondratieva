@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    {% load static %}
+</head>
+<body>
+    <h1>{{ title }}</h1>
+    <ul>
+        {% for user in users %}
+            <li>
+                <strong>Имя:</strong> {{ user.name }} <br>
+                <strong>Возраст:</strong> {{ user.age }} <br>
+                <strong>Телефон:</strong> {{ user.phone }} <br>
+                <img src="{% static user.photo %}" alt="{{ user.name }}'s photo" style="width:100px;">
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'home' %}">Вернуться на главную</a>
+    <a href="{% url 'tasks' %}">Перейти к задачам</a>
+</body>
+</html>
