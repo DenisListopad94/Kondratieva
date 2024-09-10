@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задачи с высоким приоритетом</title>
+</head>
+<body>
+    <h1>Задачи с высоким приоритетом</h1>
+    <ul>
+        {% for task in tasks %}
+            <li>
+                <strong>Название:</strong> {{ task.title }} <br>
+                <strong>Описание:</strong> {{ task.description }} <br>
+                <strong>Статус:</strong> {{ task.status }} <br>
+                <strong>Приоритет:</strong> {{ task.priority }} <br>
+                <strong>Уровень сложности:</strong> {{ task.height_level }}
+            </li>
+        {% empty %}
+            <li>Нет задач с высоким приоритетом.</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'home' %}">Вернуться на главную</a>
+</body>
+</html>
